@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'ajax'; // Dhyan dein: Agar axios work na kare toh import axios from 'axios'; rakhein
+import axios from 'axios'; // 🚀 Yeh sahi import hai
 
-// Neeche bilkul simple format me login aur register ke live urls map kar diye hain
 function Auth({ onAuthSuccess }) {
     const [isLogin, setIsLogin] = useState(true);
     const [name, setName] = useState('');

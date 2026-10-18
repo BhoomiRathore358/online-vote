@@ -5,7 +5,7 @@ import CandidateList from './components/CandidateList';
 import Auth from './components/Auth';
 import './App.css';
 
-// 🚀 Sahi explicit production URL map kar diya hai
+// 🚀 Yeh address 100% sahi map kiya hua hai
 const API_URL = 'https://onrender.com';
 
 function App() {
