@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import connectDB from './config/db.js';
+import { connectDB } from './config/db.js';
 import candidateRoutes from './routes/candidateRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 
@@ -22,6 +22,10 @@ app.get('/api/test', (req, res) => {
 // Main Routes Mapping
 app.use('/api/candidates', candidateRoutes);
 app.use('/api/auth', authRoutes);
+app.use(cors({
+  origin: 'https://online-vote-delta.vercel.app/', // Yahan apne Vercel frontend ka URL dalein
+  credentials: true
+}));
 
 const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
