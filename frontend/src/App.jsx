@@ -5,8 +5,10 @@ import CandidateList from './components/CandidateList';
 import Auth from './components/Auth';
 import './App.css';
 
-// ✅ CORE PRODUCTION LIVE BACKEND CONFIGURATION
-const API_URL = 'https://onrender.com';
+// ✅ AAPKA ASLI RENDER BACKEND URL SET KAR DIYA HAI
+const BASE_URL = 'https://online-vote-9.onrender.com'; 
+
+const API_URL = `${BASE_URL}/api/candidates`;
 
 function App() {
     const [user, setUser] = useState(null);
@@ -23,7 +25,7 @@ function App() {
             const res = await axios.get(API_URL);
             setCandidates(res.data);
         } catch (error) {
-            console.error(error);
+            console.error("Fetch Candidates Error:", error);
         }
     };
 
@@ -32,7 +34,7 @@ function App() {
             const res = await axios.post(API_URL, data);
             setCandidates([...candidates, res.data]);
         } catch (error) {
-            console.error(error);
+            console.error("Add Candidate Error:", error);
         }
     };
 
@@ -42,7 +44,7 @@ function App() {
             setCandidates(candidates.map(c => c._id === id ? res.data : c).sort((a,b) => b.votes - a.votes));
             alert("Your vote has been cast successfully! 🗳️");
         } catch (error) {
-            console.error(error);
+            console.error("Cast Vote Error:", error);
         }
     };
 
