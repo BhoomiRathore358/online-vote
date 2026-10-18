@@ -15,7 +15,8 @@ function Auth({ onAuthSuccess }) {
         const payload = isLogin ? { voterId, password } : { name, voterId, password };
 
         try {
-           const res = await axios.post(`http://localhost:8000/api/auth/${endpoint}`, payload);
+            // 🚀 Localhost ko hata kar Render ka live production URL laga diya hai
+            const res = await axios.post(`https://onrender.com{endpoint}`, payload);
 
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user', JSON.stringify(res.data.user));
@@ -45,4 +46,5 @@ function Auth({ onAuthSuccess }) {
         </div>
     );
 }
+
 export default Auth;
