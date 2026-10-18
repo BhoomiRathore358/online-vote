@@ -16,7 +16,7 @@ function Auth({ onAuthSuccess }) {
 
         try {
             // 🚀 Localhost ko hata kar Render ka live production URL laga diya hai
-            const res = await axios.post(`https://onrender.com{endpoint}`, payload);
+            const res = await axios.post(`https://online-vote-9.onrender.com{endpoint}`, payload);
 
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user', JSON.stringify(res.data.user));

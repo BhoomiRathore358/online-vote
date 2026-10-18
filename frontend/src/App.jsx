@@ -4,7 +4,7 @@ import CandidateForm from './components/CandidateForm';
 import CandidateList from './components/CandidateList';
 import Auth from './components/Auth';
 import './App.css';
-const API_URL = 'https://onrender.com';
+const API_URL = 'https://online-vote-9.onrender.com';
 
 
 
