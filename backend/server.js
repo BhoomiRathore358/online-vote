@@ -18,11 +18,10 @@ const app = express();
 // 1. CORS Setup (Ise hamesha sabse upar hona chahiye, aur URL ke end me '/' nahi hona chahiye)
 // ❌ Purane app.use(cors({...})) wale pure hisse ko hataiye aur sirf ye likhiye:
 app.use(cors({
-  origin: 'https://vercel.com/bhoomirathore358/online-vote', // Aapka Vercel URL
+  origin: 'https://online-vote-delta.vercel.app', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
-
 
 // 2. Body Parser Middleware
 app.use(express.json());
