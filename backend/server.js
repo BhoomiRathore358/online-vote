@@ -16,10 +16,9 @@ connectDB();
 const app = express();
 
 // 1. CORS Setup (Ise hamesha sabse upar hona chahiye, aur URL ke end me '/' nahi hona chahiye)
-app.use(cors({
-  origin: 'https://online-vote-delta.vercel.app', 
-  credentials: true
-}));
+// ❌ Purane app.use(cors({...})) wale pure hisse ko hataiye aur sirf ye likhiye:
+app.use(cors());
+
 
 // 2. Body Parser Middleware
 app.use(express.json());
