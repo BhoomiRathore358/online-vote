@@ -14,6 +14,7 @@ function Auth({ onAuthSuccess }) {
         const payload = isLogin ? { voterId, password } : { name, voterId, password };
 
         try {
+            // 🚀 Dot hata kar sahi API endpoints (login aur register) set kar diye hain
             let url = '';
             if (isLogin) {
                 url = 'https://onrender.com';
