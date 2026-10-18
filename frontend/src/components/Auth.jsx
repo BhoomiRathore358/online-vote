@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // 🚀 Yeh sahi import hai
+import axios from 'axios';
 
 function Auth({ onAuthSuccess }) {
     const [isLogin, setIsLogin] = useState(true);
@@ -14,7 +14,7 @@ function Auth({ onAuthSuccess }) {
         const payload = isLogin ? { voterId, password } : { name, voterId, password };
 
         try {
-            // 🚀 Dot hata kar sahi API endpoints (login aur register) set kar diye hain
+            // ✅ PRODUCTION ROUTING PATHS FIXED EXPLICITLY
             let url = '';
             if (isLogin) {
                 url = 'https://onrender.com';

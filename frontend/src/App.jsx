@@ -5,7 +5,7 @@ import CandidateList from './components/CandidateList';
 import Auth from './components/Auth';
 import './App.css';
 
-// 🚀 LIVE BACKEND CANDIDATES ENDPOINT MAPPED PERFECTLY
+// ✅ CORE PRODUCTION LIVE BACKEND CONFIGURATION
 const API_URL = 'https://onrender.com';
 
 function App() {
@@ -38,7 +38,6 @@ function App() {
 
     const castVote = async (id) => {
         try {
-            // Vote functionality mapped to the correct dynamic route
             const res = await axios.put(`${API_URL}/vote/${id}`);
             setCandidates(candidates.map(c => c._id === id ? res.data : c).sort((a,b) => b.votes - a.votes));
             alert("Your vote has been cast successfully! 🗳️");
