@@ -4,7 +4,8 @@ import cors from 'cors';
 
 import candidateRoutes from './routes/candidateRoutes.js';
 import authRoutes from './routes/authRoutes.js';
-import connectDB from './config/db.js';
+import { connectDB } from './config/db.js';
+
 
 // Environment variables configuration
 dotenv.config();
