@@ -4,9 +4,9 @@ import CandidateForm from './components/CandidateForm';
 import CandidateList from './components/CandidateList';
 import Auth from './components/Auth';
 import './App.css';
-const API_URL = 'https://online-vote-9.onrender.com';
 
-
+// 🚀 Sahi production address ke sath candidates ka explicit endpoints map kar diya hai
+const API_URL = 'https://onrender.com';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -38,6 +38,7 @@ function App() {
 
     const castVote = async (id) => {
         try {
+            // Backend endpoint map update: vote karne ke liye endpoint
             const res = await axios.put(`${API_URL}/vote/${id}`);
             setCandidates(candidates.map(c => c._id === id ? res.data : c).sort((a,b) => b.votes - a.votes));
             alert("Your vote has been cast successfully! 🗳️");
@@ -73,4 +74,5 @@ function App() {
         </div>
     );
 }
+
 export default App;

@@ -11,12 +11,18 @@ function Auth({ onAuthSuccess }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-        const endpoint = isLogin ? 'login' : 'register';
         const payload = isLogin ? { voterId, password } : { name, voterId, password };
 
         try {
-            // 🚀 Localhost ko hata kar Render ka live production URL laga diya hai
-            const res = await axios.post(`https://online-vote-9.onrender.com{endpoint}`, payload);
+            // 🚀 Humne `${endpoint}` ka jhanjhat hi khatam kar diya taaki variable crash na ho
+            let url = '';
+            if (isLogin) {
+                url = 'https://onrender.com';
+            } else {
+                url = 'https://onrender.com';
+            }
+
+            const res = await axios.post(url, payload);
 
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user', JSON.stringify(res.data.user));
