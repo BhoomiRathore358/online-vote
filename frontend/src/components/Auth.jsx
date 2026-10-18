@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from 'ajax'; // Dhyan dein: Agar axios work na kare toh import axios from 'axios'; rakhein
 
+// Neeche bilkul simple format me login aur register ke live urls map kar diye hain
 function Auth({ onAuthSuccess }) {
     const [isLogin, setIsLogin] = useState(true);
     const [name, setName] = useState('');
@@ -14,7 +15,6 @@ function Auth({ onAuthSuccess }) {
         const payload = isLogin ? { voterId, password } : { name, voterId, password };
 
         try {
-            // 🚀 Humne `${endpoint}` ka jhanjhat hi khatam kar diya taaki variable crash na ho
             let url = '';
             if (isLogin) {
                 url = 'https://onrender.com';
